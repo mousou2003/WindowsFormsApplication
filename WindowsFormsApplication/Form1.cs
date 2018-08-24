@@ -13,15 +13,17 @@ namespace WindowsFormsApplication
     public partial class Form1 : Form
     {
         int youClickeddme;
+        const string youclickText = "You Clicked me {0} times";
         public Form1()
         {
-            youClickeddme = 0;
             InitializeComponent();
+            youClickeddme = 0;
+            textBox1.Text = String.Format(youclickText, youClickeddme);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "You clicked me " + youClickeddme++;
+            textBox1.Text = String.Format(youclickText, ++youClickeddme);
         }
     }
 }
